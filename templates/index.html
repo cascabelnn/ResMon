@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block body %}
+  <style>
+   table {
+    width: 80%;
+    background: black;
+    color: black;
+    border-spacing: 1px;	
+   }
+   td, th {
+    background: #228B22;
+    padding: 5px;
+   }
+  </style>
+  {% if session.logged_in %}
+    <form action="{{ url_for('add_url') }}" method=post class=add-entry>
+      <dl>      
+        <dt>Add url:
+        <dd><input type=text size=50 name=url>  
+		<dt>Time request (sec):
+		<dd><input type=text size=10 name=times>        
+        <dd><input type=submit value=Add_url>
+      </dl>
+    </form>
+	<form action="{{ url_for('url_ping') }}" method=post class=add-entry>
+      <dl>
+        <dd><input type=submit value=Update>
+      </dl>
+    </form>
+  {% endif %}
+  <div>
+  <h3>Web Resources</h3>
+  </div>
+  <DIV ALIGN="center">
+  <table>  
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>URL</th>
+          <th>Time request</th>
+          <th>Status</th>          
+        </tr>
+      </thead>
+	  <tbody>
+      {% for it in reslist %}
+        <tr ALIGN="center">          
+          <td>{{ it.id }}</td>
+          <td WIDTH=50%>{{ it.url }}</td>
+          <td WIDTH=20%>{{ it.times }}</td>
+          <td WIDTH=20%>{{ it.status }}</td>          
+        </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+  </DIV>
+<!--  <ul class=entries>
+  {% for resl in reslist %}
+    <li><h2>{{ resl.url }}</h2>{{ resl.times|safe }}
+	<li><h2>{{ resl.status }}</h2>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>-->
+{% endblock %}

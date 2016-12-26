@@ -1,0 +1,22 @@
+body            { font-family: sans-serif; }
+a, h1, h2       { color: #008000; }
+h1, h2, h3          { font-family: latha; margin: 0; }
+h1              { border-bottom: 2px solid #006400; text-align: center; }
+h2              { font-size: 1.2em; }
+h3              { font-size: 1.5em; text-align: center; }
+dd              {color: #008000; }
+
+.page           { margin: 2em auto; width: 60em; border: 5px solid #006400;
+                  padding: 0.8em; background: #98FB98; }
+.entries        { list-style: none; margin: 0; padding: 0; }
+.entries li     { margin: 0.8em 1.2em; }
+.entries li h2  { margin-left: -1em; }
+.add-entry      { font-size: 0.9em; border-bottom: 1px solid #98FB98; }
+.add-entry dl   { font-weight: bold; }
+.add-url      { font-size: 0.9em; border-bottom: 1px solid #98FB98; }
+.metanav        { text-align: right; font-size: 1em; padding: 0.5em;
+                  margin-bottom: 1em; background: #98FB98; }
+.flash          { background: #98FB98; padding: 0.5em;
+                  border: 1px solid #006400; }
+.error          { background: #98FB98; padding: 0.5em; }
+.table-res        { width: 80%; }
